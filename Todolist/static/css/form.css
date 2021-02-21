@@ -1,0 +1,57 @@
+.form-errors {
+    font-size: 18px;
+    color: orangered;
+    font-family: Roboto;
+}
+
+form {
+    width: 100%;
+    margin: auto;
+}
+
+.form-group {
+    margin: 15px 0px;
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    justify-content: space-between;
+}
+
+.label-clean {
+    font-family: sans-serif;
+}
+
+.input-clean {
+    height: 35px;
+    border-radius: 2px;
+    border: 1px solid black;
+    padding-left: 10px;
+}
+
+input:focus {
+    outline: 0px;
+}
+
+
+/* if form has errors */
+
+.label-error {
+    color: orangered;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input-error {
+    height: 35px;
+    border-radius: 2px;
+    border: 1px solid orangered;
+    padding-left: 10px;
+}
+
+
+/* help_text */
+
+small {
+    color: gray;
+    font-size: 15px;
+    font-family: sans-serif;
+}

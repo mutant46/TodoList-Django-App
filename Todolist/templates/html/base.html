@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/font.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}"> {% block stylesheet %} {% endblock %}
+    <title> {% block Title %} {% endblock %}</title>
+</head>
+
+<body>
+
+
+    <main>
+        {% block navigation %}
+        <nav>
+            <div class="navbar-brand">
+                <h2><a href="{% url 'home' %}">Todo</a></h2>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-list-item"><a href="{% url 'home' %}" class="nav-item">Home</a></li>
+                {% if not request.user.is_authenticated %}
+                <li class="nav-list-item"><a href="{% url 'login' %}" class="nav-item">Login</a></li>
+                <li class="nav-list-item"><a href="{% url 'signup' %}" class="nav-item">Register</a></li>
+                {% else %}
+                <li>
+                    <div class="user_name">
+                        <span class="nav-item">{{ request.user.username }}</span>
+                        <img src="{% static 'assets/down.svg' %}" alt="" width="15px">
+                        <div class="dropdown">
+                            <ul class="dropdown-links">
+                                <li><a href="{% url 'profile' %}" class="nav-item">Profile</a></li>
+                                <li><a href="{% url 'password_change' %}" class="nav-item">Change Password</a></li>
+                                <li><a href="{% url 'logout' %}" class="nav-item">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endblock %} {% block content %} {% endblock %}
+
+
+</body>
+
+</html>

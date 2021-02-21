@@ -1,0 +1,278 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+}
+
+
+/* global styling */
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    width: 100%;
+    height: 7vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: #1b2631;
+    padding: 0px 100px;
+    border-bottom: 1px solid white;
+}
+
+.navbar-brand {
+    font-size: 1em;
+    font-family: Rancher;
+    letter-spacing: 5px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-item {
+    font-size: 1.25rem;
+    font-family: Roboto;
+}
+
+
+/* dropdown menu */
+
+.user_name {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.user_name span {
+    margin-right: 10px;
+}
+
+.user_name:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    width: 170%;
+    background-color: white;
+    padding: 15px 0px;
+    display: none;
+}
+
+.dropdown .nav-item {
+    font-size: 1rem;
+}
+
+.dropdown-links li {
+    padding: 10px 5px;
+}
+
+.dropdown-links li a {
+    color: #797979;
+}
+
+.dropdown-links li a:hover {
+    color: #51ABD2;
+}
+
+.task-list {
+    display: flex;
+    background-color: #1b2631;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* add Task  */
+
+header {
+    display: flex;
+    height: 15vh;
+    padding: 0px 100px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2C3E50;
+    color: white;
+}
+
+.btn {
+    font-family: Roboto;
+    border: 1px solid white;
+    padding: 12px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #2C3E50;
+    font-weight: bold;
+}
+
+
+/* my table */
+
+.my-table {
+    height: 78vh;
+    overflow: auto;
+    color: lightgray;
+}
+
+table {
+    padding: 0px 10px;
+    width: 100%;
+    border-spacing: 0 2em;
+    text-align: center;
+}
+
+th {
+    font-family: Josefin;
+    font-size: 4vmin;
+    padding: 0px 10px;
+    font-weight: bold;
+}
+
+td {
+    font-family: Roboto;
+    font-size: 15px;
+    background-color: #2C3E50;
+}
+
+.task-list h1 {
+    text-align: center;
+    font-family: Josefin;
+}
+
+th,
+td {
+    padding: 10px 10px;
+}
+
+
+/* scrooll bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: gray;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+
+/* side bar or name bar */
+
+
+/* form Wrapper */
+
+.createTask {
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 75%;
+    padding: 40px 20px;
+}
+
+.close {
+    position: relative;
+    left: 98%;
+    font-size: 20px;
+    font-family: Roboto;
+    cursor: pointer;
+}
+
+
+/* form */
+
+.form {
+    margin-top: 50px;
+}
+
+.join-us {
+    text-align: center;
+}
+
+.join-us h1 {
+    font-family: Rancher;
+    font-size: 5vmin;
+}
+
+.join-us p {
+    font-family: Roboto;
+}
+
+.join-us p a {
+    color: #51ABD2;
+}
+
+
+/* submit button */
+
+.join {
+    width: 100%;
+    height: 35px;
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    font-family: Roboto;
+}
+
+
+/* javascript classes */
+
+.toggle {
+    top: 50%;
+    transition: all 1s ease;
+}
+
+.toggle-up {
+    top: -150%;
+    transition: all 1s ease;
+}
+
+
+/* media qureies */
+
+@media only screen and (max-width:600px) {
+    nav {
+        padding: 0px 80px 0px 20px;
+    }
+    header {
+        padding: 0px 20px;
+    }
+    table {
+        padding: 0px;
+    }
+    img {
+        width: 15px;
+    }
+    .form {
+        margin-top: 20px;
+        width: 100%;
+    }
+}

@@ -1,0 +1,42 @@
+{% extends 'html/base.html' %} {% load static %} {% block Title %} Todo | change password {% endblock %} {% block stylesheet %}
+
+<link rel="stylesheet" href="{% static 'css/signup-style.css' %}"> {% endblock %} {% block navigation %} {% endblock %} {% block content %}
+
+<main>
+    <div class="bg-div">
+        <div class="navbar-brand">
+            <h2><a href="{% url 'dashboard' %}">Todo</a></h2>
+        </div>
+
+        <h1 class="signup"> Hey {{ request.user.username }} </h1>
+
+
+        <div class="middle-arrow">
+            <div class="arrow">
+                <img src="{% static 'assets/eight-arrow.svg' %}" alt="" width="60%">
+            </div>
+        </div>
+    </div>
+    <section>
+
+
+        <article>
+            <div class="join-us">
+                <h1>Change Password</h1>
+                <p>Don't want to Change the Password
+                    <a href="{% url 'dashboard' %}">Cancel</a>
+                </p>
+            </div>
+
+            <form action="." method="POST" novalidate>
+                {% csrf_token %} {% include 'html/form.html' %}
+                <button class="join" type="submit">Change</button>
+            </form>
+
+        </article>
+
+    </section>
+</main>
+
+
+{% endblock %}

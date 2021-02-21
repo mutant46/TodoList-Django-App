@@ -1,0 +1,33 @@
+{% extends 'html/base.html' %} {% load static %} {% block Title %} Todo {% endblock %} {% block stylesheet %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock %} {% block content %}
+<div class="intro-box">
+    <h1>Get your things done in a proper manner</h1>
+    <p>Stop waiting time and getting frustated because here we are droping the best too for Daily Task Management</p>
+    <a href="{% url 'dashboard' %}" class="btn">Create list</a>
+</div>
+</main>
+
+<section>
+    <h1>FEATURES</h1>
+    <div class="feature">
+        <img src="{% static 'assets/add_task_div.svg' %}" alt="">
+        <div class="feature-desc">
+            <h3>Add Task into Your Lists</h3>
+            <a href="{% url 'dashboard' %}" class="btn">Add Task</a>
+        </div>
+    </div>
+    <div class="feature">
+        <div class="feature-desc">
+            <h3>Set Remainder for your task</h3>
+            <a onclick=" window.alert('this feature is comming sooon')" class="btn">Set</a>
+        </div>
+        <img src="{% static 'assets/Remainder.svg' %}" alt="">
+
+    </div>
+</section>
+<footer>
+    <p>Created and Designed By Mutant46</p>
+</footer>
+
+{% endblock %}

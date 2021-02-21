@@ -1,0 +1,18 @@
+{% extends 'html/base.html' %} {% load static %} {% block Title %} Todo | change password {% endblock %} {% block stylesheet %}
+
+<link rel="stylesheet" href="{% static 'css/signup-style.css' %}"> {% endblock %} {% block navigation %} {% endblock %} {% block content %}
+
+
+
+
+<div class="join-us" style="display: flex; align-items: center;justify-content: center; flex-direction: column;width: 100%;">
+    <h1>Congrates</h1>
+    <p>Your password has been changed
+        <a href="{% url 'dashboard' %}">Go to Dashboard</a>
+    </p>
+</div>
+
+
+
+
+{% endblock %}

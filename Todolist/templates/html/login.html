@@ -1,0 +1,43 @@
+{% extends 'html/base.html' %} {% load static %} {% block Title %} Todo | Login {% endblock %} {% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/login-style.css' %}">
+<link rel="stylesheet" href="{% static 'css/form.css' %}"> {% endblock %} {% block navigation %} {% endblock %} {% block content %}
+
+<main>
+    <div class="bg-div">
+        <div class="navbar-brand">
+            <h2><a href="{% url 'home' %}">Todo</a></h2>
+        </div>
+
+        <h1 class="signup">Log In </h1>
+
+
+        <div class="middle-arrow">
+            <div class="arrow">
+                <img src="{% static 'assets/eight-arrow.svg' %}" alt="" width="60%">
+            </div>
+        </div>
+    </div>
+    <section>
+
+
+        <article>
+            <div class="join-us">
+                <h1>Welcome Back</h1>
+                <p>Don't have an Account ?
+                    <a href="{% url 'signup' %}">Sign Up</a>
+                </p>
+            </div>
+
+            <form action="." method="POST" novalidate>
+                {% csrf_token %} {% include 'html/form.html' %}
+                <button class="join" type="submit">Log In</button>
+            </form>
+
+
+            <p>By joing, you agree to the <ins><a href="#">Terms</a></ins> and <ins><a href="#">Privacy Policy</a></ins></p>
+        </article>
+
+    </section>
+</main>
+
+{% endblock %}

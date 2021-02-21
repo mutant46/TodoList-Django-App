@@ -1,0 +1,95 @@
+{% extends 'html/base.html' %} {% load static %} {% block Title %} Todo | dashboard {% endblock %} {% block stylesheet %}
+
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}"> {% endblock %} {% block navigation %}
+
+<nav>
+    <div class="navbar-brand">
+        <h2><a href="#">Dasboard</a></h2>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <div class="user_name">
+                <span class="nav-item">{{ request.user.username }}</span>
+                <img src="{% static 'assets/down.svg' %}" alt="" width="15px">
+                <div class="dropdown">
+                    <ul class="dropdown-links">
+                        <li><a href="{% url 'profile' %}" class="nav-item">Profile</a></li>
+                        <li><a href="{% url 'password_change' %}" class="nav-item">Change Password</a></li>
+                        <li><a href="{% url 'logout' %}" class="nav-item">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+{% endblock %} {% block content %}
+
+<div class="task-list">
+
+    <div class="container">
+        <header>
+            <a class="btn">Create Task</a>
+        </header>
+        <div class="my-table">
+            {% if task %}
+            <Table>
+
+
+                <tr>
+                    <th>Task Name</th>
+                    <th>Completion Date</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <th>Status</th>
+                </tr>
+                {% for task in task %}
+                <tr>
+                    <td title="{{ task.description }}">{{ task.name }}</td>
+                    <td>{% if task.Completion_date %} {{ task.Completion_date }} {% else %} <a href="{% url 'edit_task' task.id %}">Set</a> {% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url 'edit_task' task.id %}"><img src="{% static 'assets/edit.svg' %}" alt="" width="25px"></a>
+                    </td>
+                    <td>
+                        <a href="{% url 'delete_task' task.id %}"><img src="{% static 'assets/Delete.svg' %}" alt="" width="25px"></a>
+                    </td>
+                    <td>
+                        {% if not task.completion_status %}
+                        <a class="mark_done" href="{% url 'set_status' task.id %}">mark done</a> {% else %}
+                        <img src="{% static 'assets/tick.svg' %}" alt="" width="25px"></a> {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </Table>
+            {% else %}
+
+            <h1 style="padding-top: 100px;">You have No Task to Complete Click on the button to create one :)</h1>
+            {% endif %}
+
+        </div>
+
+    </div>
+    <div class="name-bar">
+
+    </div>
+</div>
+
+
+<div class="createTask">
+    <span class="close">X</span>
+    <div class="form">
+        <div class="join-us">
+            <h1>Create Task</h1>
+        </div>
+        <form action="." method="POST">
+            {% csrf_token %} {% include 'html/form.html' %}
+            <button class="join" type="submit">Create</button>
+        </form>
+
+    </div>
+</div>
+
+<script src="{% static 'js/app.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,320 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+}
+
+
+/* global styling */
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    width: 100%;
+    height: 7vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: #1b2631;
+    padding: 0px 50px;
+    border-bottom: 1px solid white;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-family: Rancher;
+    letter-spacing: 5px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-item {
+    font-size: 1.25rem;
+    font-family: Roboto;
+}
+
+
+/* dropdown menu */
+
+.user_name {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.user_name span {
+    margin-right: 10px;
+}
+
+.user_name:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    width: 140%;
+    background-color: white;
+    padding: 15px 0px;
+    display: none;
+}
+
+.dropdown .nav-item {
+    font-size: 1rem;
+}
+
+.dropdown-links li {
+    padding: 10px 5px;
+}
+
+.dropdown-links li a {
+    color: #797979;
+}
+
+.dropdown-links li a:hover {
+    color: #51ABD2;
+}
+
+.task-list {
+    display: flex;
+    background-color: #1b2631;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* add Task  */
+
+header {
+    display: flex;
+    height: 8vh;
+    padding: 0px 45px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2C3E50;
+    color: white;
+}
+
+header .btn {
+    font-family: Roboto;
+    background-color: Green;
+    padding: 12px 22px;
+    border-radius: 5px;
+}
+
+header .btn:hover {
+    color: #1b2631;
+}
+
+
+/* my table */
+
+.my-table {
+    height: 85vh;
+    overflow: auto;
+    color: lightgray;
+}
+
+table {
+    padding: 0px 10px;
+    width: 100%;
+    border-spacing: 0 2em;
+    text-align: center;
+}
+
+th {
+    font-family: Roboto;
+    font-size: 15px;
+    padding: 0px 10px;
+}
+
+td {
+    font-family: Roboto;
+    font-size: 15px;
+    background-color: #2C3E50;
+}
+
+.task-list h1 {
+    text-align: center;
+    font-family: Josefin;
+}
+
+th,
+td {
+    padding: 10px 10px;
+}
+
+
+/* scrooll bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: gray;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+
+/* side bar or name bar */
+
+
+/* form Wrapper */
+
+.createTask {
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 75%;
+    padding: 40px 20px;
+}
+
+.close {
+    position: relative;
+    left: 98%;
+    font-size: 20px;
+    font-family: Roboto;
+    cursor: pointer;
+}
+
+
+/* form */
+
+.form {
+    margin-top: 50px;
+}
+
+.join-us {
+    text-align: center;
+}
+
+.join-us h1 {
+    font-family: Rancher;
+    font-size: 5vmin;
+}
+
+.join-us p {
+    font-family: Roboto;
+}
+
+.join-us p a {
+    color: #51ABD2;
+}
+
+form {
+    width: 100%;
+    margin: auto;
+}
+
+.form-group {
+    margin: 15px 0px;
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    justify-content: space-between;
+}
+
+.label-clean {
+    font-family: sans-serif;
+}
+
+.input-clean {
+    height: 35px;
+    border-radius: 2px;
+    border: 1px solid black;
+    padding-left: 10px;
+}
+
+input:focus {
+    outline: 0px;
+}
+
+
+/* if form has errors */
+
+.label-error {
+    color: orangered;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input-error {
+    height: 35px;
+    border-radius: 2px;
+    border: 1px solid orangered;
+    padding-left: 10px;
+}
+
+
+/* first name and last name */
+
+.signup-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-control {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    justify-content: space-between;
+}
+
+
+/*  button  */
+
+.join {
+    width: 100%;
+    height: 35px;
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    font-family: Roboto;
+}
+
+
+/* help_text */
+
+small {
+    color: gray;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+
+/* javascript classes */
+
+.toggle {
+    top: 50%;
+    transition: all 1s ease;
+}
+
+.toggle-up {
+    top: -150%;
+    transition: all 1s ease;
+}

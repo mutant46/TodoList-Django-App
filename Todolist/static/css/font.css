@@ -1,0 +1,14 @@
+@font-face {
+    font-family: Josefin;
+    src: url(../fonts/josefin_Sans/JosefinSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Rancher;
+    src: url(../fonts/Rancher/Ranchers-Regular.ttf);
+}

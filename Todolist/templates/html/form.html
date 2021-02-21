@@ -1,0 +1,23 @@
+{% load static %} {% load widget_tweaks %} {% if form.non_field_errors %}
+<ul style="padding: 10px 0px;">
+    {% for error in form.non_field_errors %}
+    <li class="form-errors">{{ error }}</li>
+    {% endfor %}
+</ul>
+
+{% endif %} {% for field in form %}
+
+<div class="form-group">
+    {% if field.errors %}
+    <div class="help-text">
+        <label class="label-error">{{ field.label_tag }}</label> {% if fielf.help_text %}
+        <small>{{  field.helptext }}</small> {% endif %} {% for error in field.errors %}
+        <small style="padding: 10px 0px;">{{ error }}</small> {% endfor %}
+    </div>
+    {% render_field field class="input-error" %} {% else %}
+    <label class="label-clean">
+        {{ field.label_tag }}
+    </label> {% render_field field class="input-clean" %} {% endif %}
+</div>
+
+{% endfor %}
