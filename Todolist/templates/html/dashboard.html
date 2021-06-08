@@ -52,7 +52,7 @@
                         <a href="{% url 'edit_task' task.id %}"><img src="{% static 'assets/edit.svg' %}" alt="" width="25px"></a>
                     </td>
                     <td>
-                        <a href="{% url 'delete_task' task.id %}"><img src="{% static 'assets/Delete.svg' %}" alt="" width="25px"></a>
+                        <a href="{% url 'delete_task' task.id %}"><img src="{% static 'assets/delete.svg' %}" alt="" width="25px"></a>
                     </td>
                     <td>
                         {% if not task.completion_status %}
