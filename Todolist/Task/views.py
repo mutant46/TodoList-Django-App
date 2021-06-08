@@ -60,8 +60,6 @@ def set_status(request, task_id):
     task.save()
     return redirect('dashboard')
 
-def profile(request):
-    return render(request, 'html/profile.html')
 
 
 

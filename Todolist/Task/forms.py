@@ -16,3 +16,4 @@ class TaskEditForm(forms.ModelForm):
     class Meta:
         model = Task
         fields  = ('name', 'description', 'Completion_date')
+
