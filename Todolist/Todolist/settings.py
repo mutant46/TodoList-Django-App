@@ -41,9 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Task',
     'widget_tweaks',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -128,6 +130,8 @@ STATICFILES_DIRS = [
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'home'
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 DATE_INPUT_FORMAT = ('%d-%m-%Y')
